@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'product'
+    'product',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CSRF_TRUSTED_ORIGINS = ['https://vetl-czhygkckfbgwcwh9.canadacentral-01.azurewebsites.net']
+CORS_ALLOWED_ORIGINS = ['https://vetl-czhygkckfbgwcwh9.canadacentral-01.azurewebsites.net']
 
 ROOT_URLCONF = 'vetl.urls'
 
