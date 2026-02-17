@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,6 +27,15 @@ SECRET_KEY = 'django-insecure-g1m+)744(j_ze2xs-kyp&smgc4w71!z+lfo4$ni#_=2k8_evpu
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = ['https://vetl-czhygkckfbgwcwh9.canadacentral-01.azurewebsites.net']
+CORS_ALLOWED_ORIGINS = ['https://vetl-czhygkckfbgwcwh9.canadacentral-01.azurewebsites.net']
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 
 # Application definition
@@ -51,8 +61,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-CSRF_TRUSTED_ORIGINS = ['https://vetl-czhygkckfbgwcwh9.canadacentral-01.azurewebsites.net']
-CORS_ALLOWED_ORIGINS = ['https://vetl-czhygkckfbgwcwh9.canadacentral-01.azurewebsites.net']
+
 
 ROOT_URLCONF = 'vetl.urls'
 
