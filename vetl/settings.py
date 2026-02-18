@@ -28,7 +28,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://vetl-czhygkckfbgwcwh9.canadacentral-01.azurewebsites.net']
-CORS_ALLOWED_ORIGINS = ['https://vetl-czhygkckfbgwcwh9.canadacentral-01.azurewebsites.net']
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3001",
+    "https://vetl-frontend.azurestaticapps.net",  # later when deployed
+]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
@@ -56,6 +60,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
