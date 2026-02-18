@@ -1,7 +1,5 @@
 from django.db import models
 
-from django.db import models
-
 
 class Player(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -13,6 +11,6 @@ class Player(models.Model):
 
     class Meta:
         db_table = "players"   # <-- must match existing table name
-        managed = False        # <-- Don‚Äôt try to create or modify this table.
+        managed = False        # <-- Don't try to create or modify this table.
 
 

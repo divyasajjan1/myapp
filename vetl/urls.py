@@ -16,7 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from product.views import TeamDCViewset, TeamMarvelViewset
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+router.register(r'teamdc', TeamDCViewset, basename='teamdc')
+router.register(r'teammarvel', TeamMarvelViewset, basename='teammarvel')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-]
+    path("admin/", admin.site.urls),
+] + router.urls
