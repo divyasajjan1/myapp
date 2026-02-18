@@ -18,6 +18,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+      - name: Debug paths
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Listing contents:"
+          ls -R .
 
       - name: Set up Python version
         uses: actions/setup-python@v5
