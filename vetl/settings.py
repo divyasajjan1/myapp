@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['*']
 CSRF_TRUSTED_ORIGINS = ['https://vetl-czhygkckfbgwcwh9.canadacentral-01.azurewebsites.net']
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3001",
-    "https://vetl-frontend.azurestaticapps.net",  # later when deployed
+    "https://vetl-frontend-g3bwdkaaa8fae7b3.canadacentral-01.azurewebsites.net",  # later when deployed
 ]
 
 
